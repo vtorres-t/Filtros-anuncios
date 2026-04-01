@@ -532,6 +532,8 @@ _728x90_
 /monitor_browser/collect/*
 /exitpopup.js$script
 /v1/rgstr^
+##.sidebar-bottom-ad
+##.ad-choices
 ##.adsbytrafficjunky
 ##amp-ad
 ##.robapaginas
@@ -6812,7 +6814,6 @@ twitch.tv##.channel-skins-banner__interactive
 twitch.tv##.bonus-round-gradient
 twitch.tv##.bonus-round-gradient-urgent
 twitch.tv##.consent-banner:has-text(/cookies/)
-twitch.tv##[class*="find-me"]
 twitch.tv##[data-target="following__follow-games-cta"]
 twitch.tv##h2[data-a-target="upcoming-streams-header"]
 twitch.tv##button[data-a-target="share-button"]
@@ -7056,6 +7057,17 @@ zona-leros.*##.content_store
 zona-leros.*##.iframeDiv
 zona-leros.*##.Comprar
 zona-leros.*##[class*="Anime alt B"] > [title*="Comprar"]
+!
+! ------ bandaancha ------
+!
+bandaancha.eu###isBx > div > span
+bandaancha.eu##.vpn
+bandaancha.eu##.wrn.tpBx > [href*="getproton.me"]
+bandaancha.eu##[href*="aliexpress.com"]
+bandaancha.eu##a[href*="?tag=awazing0f-21"]
+bandaancha.eu##a[href*="awazing0f-21"]
+bandaancha.eu##.adMbBlTp
+bandaancha.eu###shBt
 !
 ! ------ Bloqueo de intrusiones externas en LAN------
 !

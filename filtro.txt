@@ -4850,27 +4850,43 @@ elespanol.com##.full-suscriptor-container
 !
 ! ------ facebook.com ------
 !
-facebook.com##div[role="complementary"] a[aria-labelledby][attributionsrc^="/privacy_sandbox/comet/register/source/?eid="][href^="http"]
-facebook.com##+js(addEventListener-defuser, mouseleave)
-facebook.com##+js(json-prune-xhr-response, data.viewer.instream_video_ads data.scrubber, '', propsToMatch, /api/graphql)
-facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.sponsored_auction_distance)
+facebook.com##+js(prevent-addEventListener, mouseleave)
+facebook.com##+js(prevent-addEventListener, scroll, showPopup)
 facebook.com##+js(remove-class, _31e, body > ._li)
-facebook.com##+js(json-prune-xhr-response, data.viewer.instream_video_ads data.scrubber, , propsToMatch, /api/graphql)
+facebook.com##+js(json-edit, ..sideFeed.nodes.*[?.__typename=="AdsSideFeedUnit"])
+facebook.com##+js(json-edit, ..sideFeedUnit.nodes.*[?.__typename=="AdsSideFeedUnit"])
+facebook.com##+js(json-edit, ..__bbox.result.data.node[?@.*.__typename=="SponsoredData"])
+facebook.com##+js(jsonl-edit-xhr-response, .data[?@.category=="SPONSORED"].node, propsToMatch, /graphql)
+facebook.com##+js(jsonl-edit-xhr-response, ..node[?.*.__typename=="SponsoredData"], propsToMatch, /graphql)
+facebook.com##+js(jsonl-edit-xhr-response, .data.viewer.news_feed.edges.*[?@.category=="SPONSORED"].node, propsToMatch, /graphql)
+facebook.com##+js(jsonl-edit-xhr-response, .data.viewer.marketplace_feed_stories.edges.*[?@.node.__typename=="MarketplaceFeedAdStory"], /graphql)
 facebook.com##+js(trusted-replace-xhr-response, '/\{"brs_content_label":[^,]+,"[^"]+":"SPONSORED"[^\n]+"cursor":"[^}]+\}/g', {}, /api/graphql)
 facebook.com##+js(trusted-replace-xhr-response, /\{"brs_content_label":[^\n]+?"category":"ENGAGEMENT[^\n]+?"cursor":"[^"]+"\}/g, {}, /api/graphql)
-facebook.com##+js(json-prune, require.0.3.0.__bbox.define.[].2.is_linkshim_supported require.0.3.0.__bbox.define.[].2.click_ids)
-facebook.com##+js(trusted-replace-xhr-response, '/\{"brs_content_label":[^,]+,"(?:category|feed_story_category)":"SPONSORED"[^\n]+"cursor":"[^}]+\}/g', {}, /api/graphql)
-facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.serpResponse.results.edges.[-].relay_rendering_strategy.view_model.story.sponsored_data.ad_id)
-facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.sponsored_data.ad_id)
-facebook.com##a[aria-label="Advertiser"]
-facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.marketplace_feed_stories.edges.[-].node.story.sponsored_data.ad_id)
-facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.marketplace_search.feed_units.edges.[-].node.story.sponsored_data.ad_id)
-facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.story.sponsored_data.ad_id)
-facebook.com##+js(trusted-replace-xhr-response, /\{"node":\{"__typename":"VideoHomeFeedUnitSectionComponent"[^\n]+?"sponsored_data":\{"ad_id"[^\n]+?"cursor":null\}/, {}, /api/graphql)
-facebook.com##+js(trusted-replace-xhr-response, /\{"node":\{"__typename":"MarketplaceFeedAdStory"[^\n]+?"cursor":(?:null|"\{[^\n]+?\}"|[^\n]+?MarketplaceSearchFeedStoriesEdge")\}/g, {}, /api/graphql)
 facebook.com##+js(trusted-replace-xhr-response, /\{"node":\{"role":"SEARCH_ADS"[^\n]+?cursor":[^}]+\}/g, {}, /api/graphql)
+facebook.com##+js(trusted-replace-xhr-response, /\{"node":\{"__typename":"MarketplaceFeedAdStory"[^\n]+?"cursor":(?:null|"\{[^\n]+?\}"|[^\n]+?MarketplaceSearchFeedStoriesEdge")\}/g, {}, /api/graphql)
+facebook.com##+js(trusted-replace-xhr-response, /\{"node":\{"__typename":"VideoHomeFeedUnitSectionComponent"[^\n]+?"sponsored_data":\{"ad_id"[^\n]+?"cursor":null\}/, {}, /api/graphql)
 facebook.com##+js(trusted-replace-xhr-response, '/\{"brs_content_label":[^,]+,"category":"SPONSORED"[^\n]+"cursor":"[^}]+\}/g', {}, /api/graphql)
 facebook.com##+js(trusted-replace-xhr-response, '/\{"brs_content_label":[^,]+,"category":"ENGAGEMENT[^\n]+"cursor":"[^"]+"\}/g', {}, /api/graphql)
+facebook.com##+js(trusted-replace-xhr-response, '/,"category_sensitive"[^\n]+?"follow_button":\{"__typename":"CometFeedStoryFollowButtonStrategy"[^\n]+"cursor":"[^"]+"\}/g', }, /api/graphql)
+facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.sponsored_auction_distance)
+facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.sponsored_data.ad_id)
+facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.sponsored_data.id_for_advertisement)
+facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.{-}.comet_sections.content.story.*.ad_id)
+facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.serpResponse.results.edges.[-].relay_rendering_strategy.view_model.story.sponsored_data.ad_id)
+facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.story.sponsored_data.ad_id)
+facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.marketplace_search.feed_units.edges.[-].node.story.sponsored_data.ad_id)
+facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.marketplace_feed_stories.edges.[-].node.story.sponsored_data.ad_id)
+facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.serpResponse.results.edges.[-].rendering_strategy.view_model.story.sponsored_data.ad_id)
+facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.sideFeedUnit.nodes.[].new_adverts.nodes.[-].sponsored_data)
+facebook.com##+js(json-prune, require.0.3.0.__bbox.define.[].2.is_linkshim_supported require.0.3.0.__bbox.define.[].2.click_ids)
+facebook.com##+js(json-prune-xhr-response, data.viewer.instream_video_ads data.scrubber, '', /api/graphql)
+facebook.com##+js(json-prune-xhr-response, data.viewer.sideFeedUnit.nodes.[].new_adverts.nodes.[-].sponsored_data, '', propsToMatch, /graphql)
+facebook.com##+js(json-prune-xhr-response, data.viewer.instream_video_ads data.scrubber, '', propsToMatch, /api/graphql)
+facebook.com##+js(json-prune-xhr-response, data.viewer.instream_video_ads data.scrubber, , propsToMatch, /api/graphql)
+facebook.com##+js(set-constant, Env.nxghljssj, false)
+facebook.com##+js(addEventListener-defuser, scroll, showPopup)
+facebook.com##div[role="complementary"] a[aria-labelledby][attributionsrc^="/privacy_sandbox/comet/register/source/?eid="][href^="http"]
+facebook.com##a[aria-label="Advertiser"]
 facebook.com##div[aria-posinset]:has-text(/Jugar|Play/)
 facebook.com#?#.pagelet-group .pagelet:has(a:has-text(/Sponsored|Create ad|Crear un anuncio|Publicidad/))
 facebook.com##div[aria-posinset]:has-text(/Sugerencia para ti|Suggestion for you/)
@@ -4883,7 +4899,6 @@ facebook.com##div[data-pagelet="RightRail"] > div > span > div:has-text(Patrocin
 facebook.com##div[data-pagelet="RightRail"] > div > div:has-text(Sugerido)
 facebook.com##div[data-pagelet="RightRail"] > div > div:has-text(Seguir viendo)
 facebook.com##div[role="complementary"] div:not([class]):not([id]) > span:not([class]):not([id]):not([aria-labelledby])
-facebook.com##+js(addEventListener-defuser, scroll, showPopup)
 facebook.com##div[role="complementary"] > div[class] > div[class] > div[class] span > div > div:not([aria-label]):not([data-visualcompletion]):has(> div[class] > div[class] div[class] > a[href^="https://l."][href*="facebook.com/l.php?u="][target="_blank"])
 facebook.com##a[href^="/ad_center/"]
 facebook.com###ssrb_stories_start + div
@@ -4892,20 +4907,12 @@ facebook.com##div[role=complementary] span:has-text(Patrocinado)
 facebook.com###watch_feed a[aria-label]:has-text(Patrocinado)
 facebook.com###stream_pagelet div[id^="hyperfeed_story_id_"]:has(a.uiStreamSponsoredLink)
 facebook.com###stream_pagelet div[id^="hyperfeed_story_id_"]:if(h6:has-text(People You May Know))
-||www.facebook.com/ajax/bootloader-endpoint/?modules=FBKeyframesLoggedSession%2CKeyframesAssetDecoder&__aaid=0&__user=100000263029294&__a=1&__req=f&__hs=20008.HYP%3Acomet_pkg.2.1..2.1&dpr=1&__ccg=EXCELLENT&__rev=1017299420&__s=eejjen%3Ao0lfpu%3A9wo8rl&__hsi=7424974461803238101&__dyn=7AzHK4HwkEng5K8G6EjBAg5S3G2O5U4e2C17xt3odE98K360CEboG0x8bo6u3y4o2Gwfi0LVEtwMw65xO321Rwwwqo462mcwfG12wOx62G5Usw9m1YwBgK7o6C0Mo4G1hx-3m1mzXw8W58jwGzEaE5e3ym2SU4i5oe8464-5pUfEe88o4Wm7-2K1yw9q2-VEbUGdG0HE88cA0z8c84q58jyUaUcojxK2B08-269wkopg6C13whEeE4WVU-4EdrxG1fBG2-2K0UE&__csr=gak_7OgTTMLMUWbHltRlNYqgQW9bTQP95uD8oGZXQnAqiJqi8AXbm-JCiqAAt5juhrlQQAnh9pb88yujyVXDzKiui8x1qF196zem9QqaDBF1miUJzqyEZ0TUhxem4e5F8rm6Uyq68uz8ix-4EpwwwFwOwxwt8jgO5K7ouxS681140VUjxa3S2G6U14U4OfAw9nwZw4-w820hW0U801spUC1Bg0oFxe0J87G04No0VR02oo1580hEw0U0w0u784O1ayU3zw8S07AU&__comet_req=15&fb_dtsg_ag=AQxtLxeSlhjg7z5USvC9SWI9H6lqk0HuXK35ffBd7oiZbi6M%3A22%3A1728436703&jazoest=24883&__spin_r=1017299420&__spin_b=trunk&__spin_t=1728761583$xhr,domain=www.facebook.com
-facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.node.sponsored_data.id_for_advertisement)
 facebook.com##:matches-path(/^\/(\?[a-z]+=\w+)?$/) div[aria-posinset] :is(h3, h4) span > a[href]:not([href^="/groups/"]):not([href*="section_header_type"]):matches-attr(href="/__cft__\[0\]=[-\w]{290,}/"):upward(div[aria-posinset]):style(height: 0 !important; overflow: hidden !important;)
+||www.facebook.com/ajax/bootloader-endpoint/?modules=FBKeyframesLoggedSession%2CKeyframesAssetDecoder&__aaid=0&__user=100000263029294&__a=1&__req=f&__hs=20008.HYP%3Acomet_pkg.2.1..2.1&dpr=1&__ccg=EXCELLENT&__rev=1017299420&__s=eejjen%3Ao0lfpu%3A9wo8rl&__hsi=7424974461803238101&__dyn=7AzHK4HwkEng5K8G6EjBAg5S3G2O5U4e2C17xt3odE98K360CEboG0x8bo6u3y4o2Gwfi0LVEtwMw65xO321Rwwwqo462mcwfG12wOx62G5Usw9m1YwBgK7o6C0Mo4G1hx-3m1mzXw8W58jwGzEaE5e3ym2SU4i5oe8464-5pUfEe88o4Wm7-2K1yw9q2-VEbUGdG0HE88cA0z8c84q58jyUaUcojxK2B08-269wkopg6C13whEeE4WVU-4EdrxG1fBG2-2K0UE&__csr=gak_7OgTTMLMUWbHltRlNYqgQW9bTQP95uD8oGZXQnAqiJqi8AXbm-JCiqAAt5juhrlQQAnh9pb88yujyVXDzKiui8x1qF196zem9QqaDBF1miUJzqyEZ0TUhxem4e5F8rm6Uyq68uz8ix-4EpwwwFwOwxwt8jgO5K7ouxS681140VUjxa3S2G6U14U4OfAw9nwZw4-w820hW0U801spUC1Bg0oFxe0J87G04No0VR02oo1580hEw0U0w0u784O1ayU3zw8S07AU&__comet_req=15&fb_dtsg_ag=AQxtLxeSlhjg7z5USvC9SWI9H6lqk0HuXK35ffBd7oiZbi6M%3A22%3A1728436703&jazoest=24883&__spin_r=1017299420&__spin_b=trunk&__spin_t=1728761583$xhr,domain=www.facebook.com
 ||facebook.com/ajax/bnzai*__comet_req=
 ||facebook.com/ajax/qm/
 ||facebook.com/plugins/$from=~facebook.com|~freepresets.com
 ||www.facebook.com/api/graphql/$xhr,replace=/\{"brs_content_label":[^\n]+?"category":"ENGAGEMENT[^\n]+?"cursor":"[^"]+"\}/{}/g
-facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.{-}.comet_sections.content.story.*.ad_id)
-facebook.com##+js(json-prune-xhr-response, data.viewer.instream_video_ads data.scrubber, '', /api/graphql)
-facebook.com##+js(jsonl-edit-xhr-response, .data.viewer.marketplace_feed_stories.edges.*[?@.node.__typename=="MarketplaceFeedAdStory"], /graphql)
-facebook.com##+js(json-prune, require.0.3.0.__bbox.require.[].3.1.__bbox.result.data.viewer.sideFeedUnit.nodes.[].new_adverts.nodes.[-].sponsored_data)
-facebook.com##+js(json-prune-xhr-response, data.viewer.sideFeedUnit.nodes.[].new_adverts.nodes.[-].sponsored_data, '', propsToMatch, /graphql)
-facebook.com##+js(json-edit, ..sideFeed.nodes.*[?.__typename=="AdsSideFeedUnit"])
-facebook.com##+js(trusted-replace-xhr-response, '/,"category_sensitive"[^\n]+?"follow_button":\{"__typename":"CometFeedStoryFollowButtonStrategy"[^\n]+"cursor":"[^"]+"\}/g', }, /api/graphql)
 !
 ! ------ fapello.com ------
 !

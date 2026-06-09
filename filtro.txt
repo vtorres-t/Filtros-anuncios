@@ -532,6 +532,16 @@ _728x90_
 /monitor_browser/collect/*
 /exitpopup.js$script
 /v1/rgstr^
+/embed-1/e-1/banners|$xhr
+/jquery.easing.*.js$script
+/psbar.jquery.*.js$script
+/assets/ads/*$~image,from=~outlook.live.com
+/script/suv5.js|$script
+###adLink
+##.dcmads
+##.ad-unit:not(.adsbox, .text-ad, .textads):not([style^="width: 1px; height: 1px; position: absolute;"])
+##.sponsored-card.recirc-feed
+##.newsletter-form__wrapper--inbodyContent
 ##.sidebar-bottom-ad
 ##.ad-choices
 ##.adsbytrafficjunky
@@ -1634,6 +1644,8 @@ _728x90_
 @@||reddit.com/r/*/comments/
 @@||google.*/search?$generichide
 @@||google.*/search?$from=google.ae|google.at|google.be|google.bg|google.by|google.ca|google.ch|google.cl|google.co.id|google.co.il|google.co.in|google.co.jp|google.co.ke|google.co.kr|google.co.nz|google.co.th|google.co.uk|google.co.ve|google.co.za|google.com|google.com.ar|google.com.au|google.com.br|google.com.co|google.com.ec|google.com.eg|google.com.hk|google.com.mx|google.com.my|google.com.pe|google.com.ph|google.com.pk|google.com.py|google.com.sa|google.com.sg|google.com.tr|google.com.tw|google.com.ua|google.com.uy|google.com.vn|google.cz|google.de|google.dk|google.dz|google.ee|google.es|google.fi|google.fr|google.gr|google.hr|google.hu|google.ie|google.it|google.lt|google.lv|google.nl|google.no|google.pl|google.pt|google.ro|google.rs|google.ru|google.se|google.sk
+@@||google.com/recaptcha/api.js
+@@||google.com/recaptcha/api2/
 @@||adobedtm.com^*/launch-$script
 @@||googletagmanager.com/gtm.js$script,from=pccomponentes.com|tn.com.ar
 @@||hqq.$generichide
@@ -3812,6 +3824,8 @@ amazfitwatchfaces.com##.advp
 ||amazon.com/1/aiv-web-player/1/oe^
 primevideo.com##+js(xml-prune, xpath(//*[name()="Period"][.//*[@value="Ad"]] | //*[name()="Period"]/@start), [value="Ad"], .mpd)
 primevideo.com##+js(json-prune, cuepointPlaylist)
+amazon.*##.AdHolder
+amazon.*##div[id^="sims-simsContainer_feature_div_"]:has(.sp_info_link)
 amazon.*##.sbv-ad-content-container
 amazon.*##.s-result-item:has([data-ad-feedback])
 amazon.*##.s-result-item:has([data-ad-feedback-label-id])
@@ -4050,42 +4064,43 @@ atresmedia.com,antena3.com,lasexta.com,ondacero.es,europafm.com,melodia-fm.com,a
 !
 ! ------ animeflv ------
 !
-@@||animeflv.net/js/adsbygoogle.js
-@@||animeflv.ru/assets/animeflv/js/ads.js
-@@||animeflv.net/efire.php^
-||animeflv.net/cpm.html
-||animeflv.net/cpm728.html
-||animeflv.net/cpx.html
-||animeflv.net/publi.php
-animeflv.net##.fa-share-alt
-animeflv.net##.adspl
-animeflv.net,animeid.com##.a160
-animeflv.net##.a300x250
-animeflv.net,animeid.com##.a728
+@@||animeflv.*/js/adsbygoogle.js
+@@||animeflv.*/assets/animeflv/js/ads.js
+@@||animeflv.*/efire.php^
+||animeflv.*/cpm.html
+||animeflv.*/cpm728.html
+||animeflv.*/cpx.html
+||animeflv.*/publi.php
+animeflv.*##+js(abort-current-script, EventTarget.prototype.addEventListener, delete window)
+animeflv.*##.fa-share-alt
+animeflv.*##.adspl
+animeflv.*,animeid.com##.a160
+animeflv.*##.a300x250
+animeflv.*,animeid.com##.a728
 elanimeflv.com##.a728
 animeflv.co##.avm
 animeflv.co##.episodeList > div > div:empty
 animeflv.co##.episodeList > div > div[style="float: left;"]
-animeflv.net##a[href^="http://bit.ly/"] > img
-animeflv.net##div[style="width:300px;height:600px"]
-animeflv.net##div[style="width:728px;height:90px"]
-animeflv.net##div[style^="width:300px"][style*="height:600px"]
-animeflv.net#?#.Container section.WdgtCn:has(> center > a[href="https://www.patreon.com/somoskudasai"] > img)
-animeflv.net#?#.Container div.WdgtCn:has(> div[style] > center > script[src^="//server.cpmstar.com/"])
-animeflv.net#?#.Container section.WdgtCn:has(> .OUTBRAIN)
-animeflv.net##[href*="twitch"],[href*="bit"]
-animeflv.net/js/*.js
+animeflv.*##a[href^="http://bit.ly/"] > img
+animeflv.*##div[style="width:300px;height:600px"]
+animeflv.*##div[style="width:728px;height:90px"]
+animeflv.*##div[style^="width:300px"][style*="height:600px"]
+animeflv.*#?#.Container section.WdgtCn:has(> center > a[href="https://www.patreon.com/somoskudasai"] > img)
+animeflv.*#?#.Container div.WdgtCn:has(> div[style] > center > script[src^="//server.cpmstar.com/"])
+animeflv.*#?#.Container section.WdgtCn:has(> .OUTBRAIN)
+animeflv.*##[href*="twitch"],[href*="bit"]
+animeflv.*/js/*.js
 animeflv-net.disqus.com/*.js
 privacymanager.io
 somoskudasai.com
 eiorwithitofsti.com*
-||animeflv.net/assets/animeflv/img/*.jpg
-||animeflv.net/img/*.png
-||animeflv.net/assets/animeflv/img/fb*.png
+||animeflv.*/assets/animeflv/img/*.jpg
+||animeflv.*/img/*.png
+||animeflv.*/assets/animeflv/img/fb*.png
 animeflv.*##+js(abort-current-script, parseInt, break;case $.)
 animeflv.*##+js(abort-current-script, jQuery, 'pp12')
-animeflv.net##+js(abort-on-property-write, bbHideDiv)
-animeflv.net##+js(abort-current-script, String.fromCharCode, zfgloaded)
+animeflv.*##+js(abort-on-property-write, bbHideDiv)
+animeflv.*##+js(abort-current-script, String.fromCharCode, zfgloaded)
 !
 ! ------ androidpc ------
 !
@@ -4125,6 +4140,8 @@ audiotools.*,multimediatools.*##+js(noeval-if, /chp_?ad/)
 audiotools.*,multimediatools.*##*:style(-webkit-touch-callout: default !important; -webkit-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important; cursor: auto !important;)!
 ! ------ audioz ------
 !
+audioz.download##+js(abort-current-script, globalThis, adserverDomain)
+audioz.download##+js(remove-node-text, script, adserverDomain)
 audioz.download###PromoHead
 audioz.download##[src*="/promo/"]
 audioz.download##+js(abort-current-script, String.fromCharCode, 'shift')
@@ -6758,6 +6775,18 @@ tiktok.com##+js(json-prune-fetch-response, itemList.[-].ad_info.ad_id, '', props
 !
 ! ------ tomshardware ------
 !
+tomshardware.*###article-body > p[id]:not([class]):has(> a[href^="https://news.google.com/publications/"])
+tomshardware.*###utility-bar__google-button
+tomshardware.*###utilitybar__button--newsletter
+tomshardware.*##.sponsored-card
+tomshardware.*##aside[data-mrf-recirculation="Trending Bar"]
+tomshardware.*##+js(set-cookie, FTR_Article_PageView, 2)
+tomshardware.*##+js(href-sanitizer, body a[href*="/Proxy.ashx?"][href*="GR_URL=http"], ?GR_URL)
+tomshardware.*##+js(href-sanitizer, 'body a[href*="?"][href*="url=http"]:is([href^="https://cc."][href*=".com/v1/otc/"],[href^="https://go.skimresources.com"],[href^="https://go.redirectingat.com"],[href^="https://invol.co/aff_m?"],[href^="https://shop-links.co/link"],[href^="https://track.effiliation.com/servlet/effi.redir?"],[href^="https://atmedia.link/product?url=http"],[href*=".com/a.ashx?"],[href^="https://www."][href*=".com/t/"],[href*=".prsm1.com/r?"],[href*=".com/click-"],[href*=".net/click-"],a[href*=".com/t/t?a="],a[href*=".dk/t/t?a="])', ?url)
+tomshardware.*##+js(href-sanitizer, 'body a[href*="?"][href*="u=http"]:is([href*=".com/c/"],[href*=".io/c/"],[href*=".net/c/"],[href*="?subId1="],[href^="https://affportal.bhphoto.com/dl/redventures/?"])', ?u)
+tomshardware.*##+js(href-sanitizer, a[href^="https://click.linksynergy.com/deeplink?id="][href*="&murl=http"], ?murl)
+tomshardware.*##+js(href-sanitizer, a[href^="https://click.linksynergy.com/"][href*="link?id="][href*="&murl=http"], ?murl)
+tomshardware.*##+js(remove-node-text, script, html-load.com)
 tomshardware.*##.future__jwplayer--carousel
 tomshardware.*##.vid-present
 tomshardware.*##[id="widgetArea17"]
@@ -7143,6 +7172,8 @@ elitegoltv.org,extremotvplay.com,tarjetarojatv.org,pirlotv.soccer,pirlotvonline.
 /^https?:\/\/[a-z]{7,}\.com\/(?=[\/a-zA-Z]*[+0-9])(?=[+\/0-9a-z]*[A-Z])[+\/0-9a-zA-Z]{140,400}$/$image,3p,match-case,from=~edu|~gov,to=com
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{7,16}\.com\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$popup,3p,match-case,to=com
 /^https?:\/\/[-a-z]{5,13}\.[a-z]{3,}\/[0-9a-z]{1,20}\?(?=[A-Za-z]{0,21}\d?)(?=[0-9a-z]{0,21}[A-Z])[0-9A-Za-z]{15,24}=(?=[%a-z]*[0-9A-Z])[%0-9A-Za-z]{35,2000}$/$xhr,3p,match-case,method=get,header=via:/^2\.\d (apache|tomcat|nginx)$/,to=~com|~dev|~edu|~gov|~net|~org|~tv
+/^https?:\/\/[a-z]{8,15}\.com\/$/$xhr,3p,method=head,from=~edu.in|~edu.me|~edu.ng|~edu.nz|~edu.pk|~edu.pm|~edu.so|~edu.sv|~edu.ug|~edu.ws|~gov.gg|~gov.in|~gov.me|~gov.ng|~gov.nz|~gov.pk|~gov.so|~gov.sx|~gov.to|~gov.tv|~gov.ws|~proton.me|~twitch.tv|best|blog|buzz|cam|cc|click|cyou|dad|download|gg|homes|in|info|ink|life|link|live|lol|me|ng|nz|one|pics|pk|pm|pro|rest|sbs|shop|site|so|soccer|stream|sv|sx|to|today|top|tube|tv|ug|ws|xyz,to=com
+/^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{3,6}(?:[?&][_a-z0-9]+=[-0-9a-zA-Z]+)*$/$script,3p,match-case
 ||static.chartbeat.com/js/chartbeat.js$script,redirect-rule=chartbeat.js
 ||boundlessveil.com^
 ||browser.sentry-cdn.com^
@@ -7899,3 +7930,12 @@ elitegoltv.org,extremotvplay.com,tarjetarojatv.org,pirlotv.soccer,pirlotvonline.
 ||images.whoer.com/image/*.gif
 ||www.loquosex.com/wp-content/uploads/ac_uploads/22375037.jpg$image
 ||www.loquosex.com/wp-content/uploads/ac_uploads/15253104.jpg$image
+||sdk.mrf.io/statics/marfeel-sdk.js
+||freyr.futurecdn.net/freyr.js
+||bat.bing.com^
+||cloudfront.net/tag-manager/
+||google.com/ccm/
+||singular.net^$3p
+||sprig.com^$3p
+||ptawhood.net^
+||pqrxmqmrbwx.com^
